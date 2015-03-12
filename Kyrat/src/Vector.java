@@ -1,8 +1,7 @@
 /**
  * Copyright by Steffen Wagner (D059727)
- *
- * Created on 12.03.2015, 13:33
- * Project: Kyrat
+ * <p/>
+ * Created on 12.03.2015, 13:33 Project: Kyrat
  */
 
 public class Vector extends java.lang.Object {
@@ -111,7 +110,7 @@ public class Vector extends java.lang.Object {
      * @return die x-Komponente
      */
     public double getX() {
-
+        return x;
     }
 
     /**
@@ -120,7 +119,7 @@ public class Vector extends java.lang.Object {
      * @return die y-Komponente
      */
     public double getY() {
-
+        return y;
     }
 
     /**
@@ -129,7 +128,7 @@ public class Vector extends java.lang.Object {
      * @return die z-Komponente
      */
     public double getZ() {
-
+        return z;
     }
 
     /**
