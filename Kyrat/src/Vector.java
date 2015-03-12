@@ -82,6 +82,8 @@ public class Vector extends java.lang.Object {
      */
     public Vector addiere(Vector vektor) throws java.lang.IllegalArgumentException {
 
+        this.x += vektor.x ;
+
     }
 
     /**
