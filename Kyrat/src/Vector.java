@@ -82,7 +82,17 @@ public class Vector extends java.lang.Object {
      */
     public Vector addiere(Vector vektor) throws java.lang.IllegalArgumentException {
 
+        Vector ergebnis = new Vector();
+
         this.x += vektor.x ;
+        this.y += vektor.y ;
+        this.z += vektor.z ;
+
+        ergebnis.x = this.x;
+        ergebnis.y = this.y;
+        ergebnis.z = this.z;
+
+        return ergebnis;
 
     }
 
