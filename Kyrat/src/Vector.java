@@ -75,7 +75,7 @@ public class Vector extends java.lang.Object {
      *
      * @param vektor Vektor, der addiert werden soll
      *
-     * @return das Eregbnis der Addition
+     * @return das Ergebnis der Addition
      *
      * @throws java.lang.IllegalArgumentException wenn der Typ von vektor nicht
      *                                            passt
