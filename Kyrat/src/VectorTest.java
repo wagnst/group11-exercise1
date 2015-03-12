@@ -1,13 +1,12 @@
 /**
  * Copyright by Steffen Wagner (D059727)
- *
- * Created on 12.03.2015, 13:33
- * Project: Kyrat
+ * <p/>
+ * Created on 12.03.2015, 13:33 Project: Kyrat
  */
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Test für die Klasse Vector.
