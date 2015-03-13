@@ -46,6 +46,7 @@ public class Vector extends java.lang.Object {
 	public Vector multipliziere(double skalar) {
 
 		Vector vektor = new Vector();
+
 		vektor.x = this.x * skalar;
 		vektor.y = this.y * skalar;
 		vektor.z = this.z * skalar;
@@ -127,6 +128,15 @@ public class Vector extends java.lang.Object {
 	 */
 	public double betrag() {
 
+		double result;
+
+		double x = this.x * this.x;
+		double y = this.y * this.y;
+		double z = this.z * this.z;
+
+		result = Math.sqrt(x + y + z);
+
+		return result;
 	}
 
 	/**
