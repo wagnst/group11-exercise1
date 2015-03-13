@@ -8,6 +8,8 @@ public class Vector extends java.lang.Object {
 
     private double x, y, z;
 
+    //Hallo hier war Max am Werkeln! 
+    
     /**
      * Erzeugt einen Null-Vector, d.h. den Vektor bei dem alle Komponenten den
      * Wert 0 haben.
