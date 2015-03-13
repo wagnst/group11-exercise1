@@ -45,12 +45,12 @@ public class Vector extends java.lang.Object {
 	 */
 	public Vector multipliziere(double skalar) {
 
-		Vector vector = new Vector();
-		vector.x = this.x * skalar;
-		vector.y = this.y * skalar;
-		vector.z = this.z * skalar;
-		
-		return vector;
+		Vector vektor = new Vector();
+		vektor.x = this.x * skalar;
+		vektor.y = this.y * skalar;
+		vektor.z = this.z * skalar;
+
+		return vektor;
 	}
 
 	/**
@@ -66,6 +66,16 @@ public class Vector extends java.lang.Object {
 	 */
 	public double multipliziere(Vector vektor)
 			throws java.lang.IllegalArgumentException {
+
+		Vector vektor2 = new Vector();
+
+		vektor2.x = this.x * vektor.x;
+		vektor2.y = this.y * vektor.y;
+		vektor2.z = this.z * vektor.z;
+
+		double ergebnis = vektor2.x + vektor2.y + vektor2.z;
+
+		return ergebnis;
 
 	}
 
