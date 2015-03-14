@@ -165,6 +165,13 @@ public class Vector extends java.lang.Object {
 	 */
 	public Vector kreuzprodukt(Vector v) {
 
+		double x = (this.y * v.z) - (this.z * v.y);
+		double y = (-this.x * v.z) + (this.z * v.x);
+		double z = (this.x * v.y) - (this.y * v.x);
+
+		Vector result = new Vector(x, y, z);
+
+		return result;
 	}
 
 	/**
