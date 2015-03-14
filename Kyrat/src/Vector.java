@@ -47,9 +47,25 @@ public class Vector extends java.lang.Object {
 
 		Vector vektor = new Vector();
 
-		vektor.x = this.x * skalar;
-		vektor.y = this.y * skalar;
-		vektor.z = this.z * skalar;
+		// to prevent the result of -0
+		if (skalar == 0) {
+			vektor.x = 0;
+			vektor.y = 0;
+			vektor.z = 0;
+
+		} else {
+			vektor.x = this.x * skalar;
+			vektor.y = this.y * skalar;
+			vektor.z = this.z * skalar;
+
+			if (vektor.x == -0) {
+				vektor.x = 0;
+			} else if (vektor.y == -0) {
+				vektor.y = 0;
+			} else if (vektor.z == -0) {
+				vektor.z = 0;
+			}
+		}
 
 		return vektor;
 	}
