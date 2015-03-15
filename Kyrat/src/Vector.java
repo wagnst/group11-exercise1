@@ -83,7 +83,7 @@ public class Vector extends java.lang.Object {
         vector2.y = this.y * vector.y;
         vector2.z = this.z * vector.z;
 
-        return vector2.x + vector2.y + vector2.z;
+        return (vector2.x + vector2.y + vector2.z);
 
     }
 
@@ -95,7 +95,20 @@ public class Vector extends java.lang.Object {
      * @throws java.lang.IllegalStateException wenn dieser Vector ein Nullvektor ist
      */
     public Vector einheitsvektor() throws java.lang.IllegalStateException {
-        return null;
+
+        Vector result = new Vector();
+        double amount;
+
+        //get amount of vector
+        amount = betrag();
+
+        //divide each part of vector with amount
+        result.x = this.x / amount;
+        result.y = this.y / amount;
+        result.z = this.z / amount;
+
+        return result;
+
     }
 
     /**
