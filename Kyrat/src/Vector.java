@@ -44,21 +44,22 @@ public class Vector extends java.lang.Object {
 
         // to prevent the result of -0
         if (skalar == 0) {
-            vector.x = 0;
-            vector.y = 0;
-            vector.z = 0;
+            vector.x = 0.0;
+            vector.y = 0.0;
+            vector.z = 0.0;
 
         } else {
+            // multiplication of each vector path with the scalar
             vector.x = this.x * skalar;
             vector.y = this.y * skalar;
             vector.z = this.z * skalar;
 
-            if (vector.x == -0) {
-                vector.x = 0;
-            } else if (vector.y == -0) {
-                vector.y = 0;
-            } else if (vector.z == -0) {
-                vector.z = 0;
+            if (vector.x == -0.0) {
+                vector.x = 0.0;
+            } else if (vector.y == -0.0) {
+                vector.y = 0.0;
+            } else if (vector.z == -0.0) {
+                vector.z = 0.0;
             }
         }
 
@@ -68,23 +69,21 @@ public class Vector extends java.lang.Object {
     /**
      * Skalarmultiplikation: Multiplikation des Vektors mit einem Vektor.
      *
-     * @param vektor Vektor, mit dem dieser Vector multipliziert werden soll
+     * @param vector Vektor, mit dem dieser Vector multipliziert werden soll
      * @return das Ergebnis der Skalar-Multiplikation
-     * @throws java.lang.IllegalArgumentException wenn der Typ von vektor nicht passt
+     * @throws java.lang.IllegalArgumentException wenn der Typ von vektor
+     *         nicht passt
      */
-    public double multipliziere(Vector vektor)
+    public double multipliziere(Vector vector)
             throws java.lang.IllegalArgumentException {
 
         Vector vector2 = new Vector();
-        double result;
 
-        vector2.x = this.x * vektor.x;
-        vector2.y = this.y * vektor.y;
-        vector2.z = this.z * vektor.z;
+        vector2.x = this.x * vector.x;
+        vector2.y = this.y * vector.y;
+        vector2.z = this.z * vector.z;
 
-        result = vector2.x + vector2.y + vector2.z;
-
-        return result;
+        return vector2.x + vector2.y + vector2.z;
 
     }
 
