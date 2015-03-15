@@ -140,7 +140,7 @@ public class Vector extends java.lang.Object {
      */
     public double betrag() {
 
-        //sqrt(aX²+aY²)
+        //sqrt(aX^2+aY^2)
         return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
     }
 
@@ -153,7 +153,7 @@ public class Vector extends java.lang.Object {
      */
     public double betrag(Vector vector) {
 
-        //sqrt(aX²+aY²)
+        //sqrt(aX^2+aY^2)
         return Math.sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
     }
 
@@ -216,8 +216,8 @@ public class Vector extends java.lang.Object {
      */
     public double winkel(Vector v) {
 
-        // (u*v) / (|u|*|v|)
-        return (multipliziere(v) / ( betrag() * betrag(v)) );
+        // 360° - cos^-1 ((u*v) / (|u|*|v|))
+        return (360.0 - Math.cosh(multipliziere(v) / ( betrag() * betrag(v))));
     }
 
     /**
@@ -242,8 +242,8 @@ public class Vector extends java.lang.Object {
     public java.lang.String toString() {
 
         return ("[ " +
-                String.format(Locale.GERMAN, "%1$,.2f", this.x) + " " +
-                String.format(Locale.GERMAN, "%1$,.2f", this.y) + " " +
+                String.format(Locale.GERMAN, "%1$,.2f", this.x) + "  " +
+                String.format(Locale.GERMAN, "%1$,.2f", this.y) + "  " +
                 String.format(Locale.GERMAN, "%1$,.2f", this.z) + " ]");
     }
 
