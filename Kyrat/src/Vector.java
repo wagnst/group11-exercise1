@@ -1,232 +1,213 @@
 /**
  * Copyright by Steffen Wagner (D059727)
- *
+ * <p/>
  * Created on 12.03.2015, 13:33 Project: Kyrat
  */
 
 public class Vector extends java.lang.Object {
 
-	private double x, y, z;
+    private double x, y, z;
 
-	/**
-	 * Erzeugt einen Null-Vector, d.h. den Vektor bei dem alle Komponenten den
-	 * Wert 0 haben.
-	 */
-	public Vector() {
-		super();
-		this.x = 0.0;
-		this.y = 0.0;
-		this.z = 0.0;
-	}
+    /**
+     * Erzeugt einen Null-Vector, d.h. den Vektor bei dem alle Komponenten den
+     * Wert 0 haben.
+     */
+    public Vector() {
+        super();
+        this.x = 0.0;
+        this.y = 0.0;
+        this.z = 0.0;
+    }
 
-	/**
-	 * Erzeugt einen neuen Vektor mit den angebgebenen Elementen.
-	 *
-	 * @param x
-	 *            die x-Komponente des Vektors
-	 * @param y
-	 *            die y-Komponente des Vektors
-	 * @param z
-	 *            die z-Komponente des Vektors
-	 */
-	public Vector(double x, double y, double z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
+    /**
+     * Erzeugt einen neuen Vektor mit den angebgebenen Elementen.
+     *
+     * @param x die x-Komponente des Vektors
+     * @param y die y-Komponente des Vektors
+     * @param z die z-Komponente des Vektors
+     */
+    public Vector(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
 
-	/**
-	 * Skalarmultiplikation: Multiplikation des Vektors mit einem Skalar.
-	 *
-	 * @param skalar
-	 *            Skalar, mit dem der Vektor multipliziert werden soll
-	 *
-	 * @return das Ergebnis der Skalar-Multiplikation
-	 */
-	public Vector multipliziere(double skalar) {
+    /**
+     * Skalarmultiplikation: Multiplikation des Vektors mit einem Skalar.
+     *
+     * @param skalar Skalar, mit dem der Vektor multipliziert werden soll
+     * @return das Ergebnis der Skalar-Multiplikation
+     */
+    public Vector multipliziere(double skalar) {
 
-		Vector vektor = new Vector();
+        Vector vector = new Vector();
 
-		// to prevent the result of -0
-		if (skalar == 0) {
-			vektor.x = 0;
-			vektor.y = 0;
-			vektor.z = 0;
+        // to prevent the result of -0
+        if (skalar == 0) {
+            vector.x = 0;
+            vector.y = 0;
+            vector.z = 0;
 
-		} else {
-			vektor.x = this.x * skalar;
-			vektor.y = this.y * skalar;
-			vektor.z = this.z * skalar;
+        } else {
+            vector.x = this.x * skalar;
+            vector.y = this.y * skalar;
+            vector.z = this.z * skalar;
 
-			if (vektor.x == -0) {
-				vektor.x = 0;
-			} else if (vektor.y == -0) {
-				vektor.y = 0;
-			} else if (vektor.z == -0) {
-				vektor.z = 0;
-			}
-		}
+            if (vector.x == -0) {
+                vector.x = 0;
+            } else if (vector.y == -0) {
+                vector.y = 0;
+            } else if (vector.z == -0) {
+                vector.z = 0;
+            }
+        }
 
-		return vektor;
-	}
+        return vector;
+    }
 
-	/**
-	 * Skalarmultiplikation: Multiplikation des Vektors mit einem Vektor.
-	 *
-	 * @param vektor
-	 *            Vektor, mit dem dieser Vector multipliziert werden soll
-	 *
-	 * @return das Ergebnis der Skalar-Multiplikation
-	 *
-	 * @throws java.lang.IllegalArgumentException
-	 *             wenn der Typ von vektor nicht passt
-	 */
-	public double multipliziere(Vector vektor)
-			throws java.lang.IllegalArgumentException {
+    /**
+     * Skalarmultiplikation: Multiplikation des Vektors mit einem Vektor.
+     *
+     * @param vektor Vektor, mit dem dieser Vector multipliziert werden soll
+     * @return das Ergebnis der Skalar-Multiplikation
+     * @throws java.lang.IllegalArgumentException wenn der Typ von vektor nicht passt
+     */
+    public double multipliziere(Vector vektor)
+            throws java.lang.IllegalArgumentException {
 
-		Vector vektor2 = new Vector();
+        Vector vector2 = new Vector();
 
-		vektor2.x = this.x * vektor.x;
-		vektor2.y = this.y * vektor.y;
-		vektor2.z = this.z * vektor.z;
+        vector2.x = this.x * vektor.x;
+        vector2.y = this.y * vektor.y;
+        vector2.z = this.z * vektor.z;
 
-		double ergebnis = vektor2.x + vektor2.y + vektor2.z;
+        double result = vector2.x + vector2.y + vector2.z;
 
-		return ergebnis;
+        return result;
 
-	}
+    }
 
-	/**
-	 * Liefert einen Vektor zurück, der diesem Vektor bezüglich der Richtung
-	 * entspricht, aber auf die Länge 1 normiert ist
-	 *
-	 * @return der Einheitsvektor zu diesem Vector
-	 *
-	 * @throws java.lang.IllegalStateException
-	 *             wenn dieser Vector ein Nullvektor ist
-	 */
-	public Vector einheitsvektor() throws java.lang.IllegalStateException {
+    /**
+     * Liefert einen Vektor zurück, der diesem Vektor bezüglich der Richtung
+     * entspricht, aber auf die Länge 1 normiert ist
+     *
+     * @return der Einheitsvektor zu diesem Vector
+     * @throws java.lang.IllegalStateException wenn dieser Vector ein Nullvektor ist
+     */
+    public Vector einheitsvektor() throws java.lang.IllegalStateException {
 
-	}
+    }
 
-	/**
-	 * Addiert den gegebenen Vektor zu diesem
-	 *
-	 * @param vektor
-	 *            Vektor, der addiert werden soll
-	 *
-	 * @return das Ergebnis der Addition
-	 *
-	 * @throws java.lang.IllegalArgumentException
-	 *             wenn der Typ von vektor nicht passt
-	 */
-	public Vector addiere(Vector vektor)
-			throws java.lang.IllegalArgumentException {
+    /**
+     * Addiert den gegebenen Vektor zu diesem
+     *
+     * @param vektor Vektor, der addiert werden soll
+     * @return das Ergebnis der Addition
+     * @throws java.lang.IllegalArgumentException wenn der Typ von vektor nicht passt
+     */
+    public Vector addiere(Vector vektor)
+            throws java.lang.IllegalArgumentException {
 
-		Vector result = new Vector();
+        Vector result = new Vector();
 
-		this.x += vektor.x;
-		this.y += vektor.y;
-		this.z += vektor.z;
+        this.x += vektor.x;
+        this.y += vektor.y;
+        this.z += vektor.z;
 
-		result.x = this.x;
-		result.y = this.y;
-		result.z = this.z;
+        result.x = this.x;
+        result.y = this.y;
+        result.z = this.z;
 
-		return result;
+        return result;
 
-	}
+    }
 
-	/**
-	 * Bestimmt den Betrag (die Länge) dieses Vektors
-	 *
-	 * @return den Betrag (die Länge) des Vektors
-	 */
-	public double betrag() {
+    /**
+     * Bestimmt den Betrag (die Länge) dieses Vektors
+     *
+     * @return den Betrag (die Länge) des Vektors
+     */
+    public double betrag() {
 
-		double result;
+        double result;
 
-		double x = this.x * this.x;
-		double y = this.y * this.y;
-		double z = this.z * this.z;
+        double x = this.x * this.x;
+        double y = this.y * this.y;
+        double z = this.z * this.z;
 
-		result = Math.sqrt(x + y + z);
+        result = Math.sqrt(x + y + z);
 
-		return result;
-	}
+        return result;
+    }
 
-	/**
-	 * Bestimmt das Kreuzprodukt dises mit dem gegebenen Vektor.
-	 *
-	 * @param v
-	 *            der Vektor, mit dem das Kreuzprodukt gebildet werden soll
-	 *
-	 * @return das Kreuzprodukt
-	 */
-	public Vector kreuzprodukt(Vector v) {
+    /**
+     * Bestimmt das Kreuzprodukt dises mit dem gegebenen Vektor.
+     *
+     * @param v der Vektor, mit dem das Kreuzprodukt gebildet werden soll
+     * @return das Kreuzprodukt
+     */
+    public Vector kreuzprodukt(Vector v) {
 
-		double x = (this.y * v.z) - (this.z * v.y);
-		double y = (-this.x * v.z) + (this.z * v.x);
-		double z = (this.x * v.y) - (this.y * v.x);
+        double x = (this.y * v.z) - (this.z * v.y);
+        double y = (-this.x * v.z) + (this.z * v.x);
+        double z = (this.x * v.y) - (this.y * v.x);
 
-		Vector result = new Vector(x, y, z);
+        Vector result = new Vector(x, y, z);
 
-		return result;
-	}
+        return result;
+    }
 
-	/**
-	 * Liefert die x-Komponente des Vektors zurück
-	 *
-	 * @return die x-Komponente
-	 */
-	public double getX() {
-		return x;
-	}
+    /**
+     * Liefert die x-Komponente des Vektors zurück
+     *
+     * @return die x-Komponente
+     */
+    public double getX() {
+        return x;
+    }
 
-	/**
-	 * Liefert die y-Komponente des Vektors zurück
-	 *
-	 * @return die y-Komponente
-	 */
-	public double getY() {
-		return y;
-	}
+    /**
+     * Liefert die y-Komponente des Vektors zurück
+     *
+     * @return die y-Komponente
+     */
+    public double getY() {
+        return y;
+    }
 
-	/**
-	 * Liefert die z-Komponente des Vektors zurück
-	 *
-	 * @return die z-Komponente
-	 */
-	public double getZ() {
-		return z;
-	}
+    /**
+     * Liefert die z-Komponente des Vektors zurück
+     *
+     * @return die z-Komponente
+     */
+    public double getZ() {
+        return z;
+    }
 
-	/**
-	 * Bestimmt den eingeschlossenen Winkel von diesem und dem gegebenen Vektor
-	 *
-	 * @param v
-	 *            der Vektor, für den der Winkel mit diesem bestimmt werden
-	 *            soll
-	 *
-	 * @return Winkel in Grad (0-180)
-	 */
-	public double winkel(Vector v) {
+    /**
+     * Bestimmt den eingeschlossenen Winkel von diesem und dem gegebenen Vektor
+     *
+     * @param v der Vektor, für den der Winkel mit diesem bestimmt werden
+     *          soll
+     * @return Winkel in Grad (0-180)
+     */
+    public double winkel(Vector v) {
+        return 0.0;
+    }
 
-	}
+    @Override
+    public int hashCode() {
+        return this.hashCode();
+    }
 
-	@Override
-	public int hashCode() {
+    @Override
+    public boolean equals(java.lang.Object o) {
+        return true;
+    }
 
-	}
-
-	@Override
-	public boolean equals(java.lang.Object o) {
-
-	}
-
-	@Override
-	public java.lang.String toString() {
-
-	}
+    @Override
+    public java.lang.String toString() {
+        return "";
+    }
 
 }
