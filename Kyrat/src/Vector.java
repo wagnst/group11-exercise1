@@ -72,7 +72,7 @@ public class Vector extends java.lang.Object {
      * @param vector Vektor, mit dem dieser Vector multipliziert werden soll
      * @return das Ergebnis der Skalar-Multiplikation
      * @throws java.lang.IllegalArgumentException wenn der Typ von vektor
-     *         nicht passt
+     *                                            nicht passt
      */
     public double multipliziere(Vector vector)
             throws java.lang.IllegalArgumentException {
@@ -95,7 +95,7 @@ public class Vector extends java.lang.Object {
      * @throws java.lang.IllegalStateException wenn dieser Vector ein Nullvektor ist
      */
     public Vector einheitsvektor() throws java.lang.IllegalStateException {
-
+        return null;
     }
 
     /**
@@ -129,15 +129,11 @@ public class Vector extends java.lang.Object {
      */
     public double betrag() {
 
-        double result;
-
         double x = this.x * this.x;
         double y = this.y * this.y;
         double z = this.z * this.z;
 
-        result = Math.sqrt(x + y + z);
-
-        return result;
+        return Math.sqrt(x + y + z);
     }
 
     /**
@@ -148,15 +144,11 @@ public class Vector extends java.lang.Object {
      */
     public Vector kreuzprodukt(Vector v) {
 
-        Vector result;
-
         double x = (this.y * v.z) - (this.z * v.y);
         double y = (-this.x * v.z) + (this.z * v.x);
         double z = (this.x * v.y) - (this.y * v.x);
 
-        result = new Vector(x, y, z);
-
-        return result;
+        return new Vector(x, y, z);
     }
 
     /**
