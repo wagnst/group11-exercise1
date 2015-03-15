@@ -4,6 +4,8 @@
  * Created on 12.03.2015, 13:33 Project: Kyrat
  */
 
+import java.util.Locale;
+
 public class Vector extends java.lang.Object {
 
     private double x, y, z;
@@ -213,7 +215,10 @@ public class Vector extends java.lang.Object {
 
     @Override
     public java.lang.String toString() {
-        return ("[ " + this.x + " " + this.y + " " + this.z + " ]");
+        return ("[ " +
+                String.format(Locale.GERMAN, "%1$,.2f",this.x) + " " +
+                String.format(Locale.GERMAN, "%1$,.2f",this.y) + " " +
+                String.format(Locale.GERMAN, "%1$,.2f",this.z) + " ]");
     }
 
 }
