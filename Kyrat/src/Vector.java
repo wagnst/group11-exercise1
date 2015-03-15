@@ -125,11 +125,9 @@ public class Vector extends java.lang.Object {
      */
     public double betrag() {
 
-        double x = this.x * this.x;
-        double y = this.y * this.y;
-        double z = this.z * this.z;
+        //sqrt(aX²+aY²)
+        return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
 
-        return Math.sqrt(x + y + z);
     }
 
     /**
