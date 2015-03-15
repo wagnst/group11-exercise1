@@ -203,7 +203,7 @@ public class Vector extends java.lang.Object {
 
     @Override
     public int hashCode() {
-
+        return (int) (this.x + this.y + this.z);
     }
 
     @Override
@@ -213,7 +213,7 @@ public class Vector extends java.lang.Object {
 
     @Override
     public java.lang.String toString() {
-
+        return ("[ " + this.x + " " + this.y + " " + this.z + " ]");
     }
 
 }
