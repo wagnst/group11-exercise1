@@ -76,12 +76,13 @@ public class Vector extends java.lang.Object {
             throws java.lang.IllegalArgumentException {
 
         Vector vector2 = new Vector();
+        double result;
 
         vector2.x = this.x * vektor.x;
         vector2.y = this.y * vektor.y;
         vector2.z = this.z * vektor.z;
 
-        double result = vector2.x + vector2.y + vector2.z;
+        result = vector2.x + vector2.y + vector2.z;
 
         return result;
 
@@ -148,11 +149,13 @@ public class Vector extends java.lang.Object {
      */
     public Vector kreuzprodukt(Vector v) {
 
+        Vector result;
+
         double x = (this.y * v.z) - (this.z * v.y);
         double y = (-this.x * v.z) + (this.z * v.x);
         double z = (this.x * v.y) - (this.y * v.x);
 
-        Vector result = new Vector(x, y, z);
+        result = new Vector(x, y, z);
 
         return result;
     }
@@ -192,22 +195,22 @@ public class Vector extends java.lang.Object {
      * @return Winkel in Grad (0-180)
      */
     public double winkel(Vector v) {
-        return 0.0;
+
     }
 
     @Override
     public int hashCode() {
-        return this.hashCode();
+
     }
 
     @Override
     public boolean equals(java.lang.Object o) {
-        return true;
+
     }
 
     @Override
     public java.lang.String toString() {
-        return "";
+
     }
 
 }
