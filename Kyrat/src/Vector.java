@@ -15,7 +15,7 @@ public class Vector extends java.lang.Object {
      * Wert 0 haben.
      */
     public Vector() {
-        
+
         this.x = 0.0;
         this.y = 0.0;
         this.z = 0.0;
@@ -116,18 +116,19 @@ public class Vector extends java.lang.Object {
     /**
      * Addiert den gegebenen Vektor zu diesem
      *
-     * @param vektor Vektor, der addiert werden soll
+     * @param vector Vektor, der addiert werden soll
      * @return das Ergebnis der Addition
-     * @throws java.lang.IllegalArgumentException wenn der Typ von vektor nicht passt
+     * @throws java.lang.IllegalArgumentException wenn der Typ von vektor
+     *                                            nicht passt
      */
-    public Vector addiere(Vector vektor)
+    public Vector addiere(Vector vector)
             throws java.lang.IllegalArgumentException {
 
         Vector result = new Vector();
 
-        result.x = this.x + vektor.x;
-        result.y = this.y + vektor.y;
-        result.z = this.z + vektor.z;
+        result.x = this.x + vector.x;
+        result.y = this.y + vector.y;
+        result.z = this.z + vector.z;
 
         return result;
     }
@@ -141,6 +142,19 @@ public class Vector extends java.lang.Object {
 
         //sqrt(aX²+aY²)
         return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+    }
+
+
+    /**
+     * Bestimmt den Betrag (die Länge) eines Vektors
+     *
+     * @param vector Vektor, von dem der Betrag bestimmt werden soll
+     * @return den Betrag (die Länge) eines Vektors
+     */
+    public double betrag(Vector vector) {
+
+        //sqrt(aX²+aY²)
+        return Math.sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
     }
 
     /**
@@ -202,6 +216,8 @@ public class Vector extends java.lang.Object {
      */
     public double winkel(Vector v) {
 
+        // (u*v) / (|u|*|v|)
+        return (multipliziere(v) / ( betrag() * betrag(v)) );
     }
 
     /**
@@ -226,8 +242,8 @@ public class Vector extends java.lang.Object {
     public java.lang.String toString() {
 
         return ("[ " +
-                String.format(Locale.GERMAN, "%1$,.2f",this.x) + " " +
-                String.format(Locale.GERMAN, "%1$,.2f",this.y) + " " +
+                String.format(Locale.GERMAN, "%1$,.2f", this.x) + " " +
+                String.format(Locale.GERMAN, "%1$,.2f", this.y) + " " +
                 String.format(Locale.GERMAN, "%1$,.2f", this.z) + " ]");
     }
 
