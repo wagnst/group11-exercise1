@@ -110,13 +110,9 @@ public class Vector extends java.lang.Object {
 
         Vector result = new Vector();
 
-        this.x += vektor.x;
-        this.y += vektor.y;
-        this.z += vektor.z;
-
-        result.x = this.x;
-        result.y = this.y;
-        result.z = this.z;
+        result.x = this.x + vektor.x;
+        result.y = this.y + vektor.y;
+        result.z = this.z + vektor.z;
 
         return result;
 
