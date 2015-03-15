@@ -217,7 +217,7 @@ public class Vector extends java.lang.Object {
     public double winkel(Vector v) {
 
         // arccos((u*v) / (|u|*|v|))
-        return Math.toDegrees(Math.acos(multipliziere(v) / ( betrag() * betrag(v))));
+        return Math.toDegrees(Math.acos(multipliziere(v) / (betrag() * betrag(v))));
     }
 
     /**
@@ -231,6 +231,22 @@ public class Vector extends java.lang.Object {
 
     @Override
     public boolean equals(java.lang.Object o) {
+
+        //object o must not eq null (prevent test with NULL)
+        if (o == null)
+            return false;
+
+        //object o must be of type Vector (prevent test with String)
+        if (!(o instanceof Vector))
+            return false;
+
+        //compare x, y and z values and return false if not equal
+        if (this.x != ((Vector) o).getX())
+            return false;
+        if (this.y != ((Vector) o).getY())
+            return false;
+        if (this.z != ((Vector) o).getZ())
+            return false;
 
         return true;
     }
