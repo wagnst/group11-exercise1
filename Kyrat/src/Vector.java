@@ -135,16 +135,21 @@ public class Vector extends java.lang.Object {
     /**
      * Bestimmt das Kreuzprodukt dises mit dem gegebenen Vektor.
      *
-     * @param v der Vektor, mit dem das Kreuzprodukt gebildet werden soll
+     * @param vector der Vektor, mit dem das Kreuzprodukt gebildet werden soll
      * @return das Kreuzprodukt
      */
-    public Vector kreuzprodukt(Vector v) {
+    public Vector kreuzprodukt(Vector vector) {
 
-        double x = (this.y * v.z) - (this.z * v.y);
-        double y = (-this.x * v.z) + (this.z * v.x);
-        double z = (this.x * v.y) - (this.y * v.x);
+        Vector result = new Vector();
 
-        return new Vector(x, y, z);
+        // aY*bZ - aZ*bY
+        result.x = this.y * vector.z - this.z * vector.y;
+        //aZ*bX - aX*bZ
+        result.y = this.z * vector.x - this.x * vector.z;
+        //aX*bY - aY*bX
+        result.z = this.x * vector.y - this.y * vector.x;
+
+        return result;
     }
 
     /**
