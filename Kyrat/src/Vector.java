@@ -210,14 +210,14 @@ public class Vector extends java.lang.Object {
     /**
      * Bestimmt den eingeschlossenen Winkel von diesem und dem gegebenen Vektor
      *
-     * @param v der Vektor, für den der Winkel mit diesem bestimmt werden
+     * @param v der Vektor, fuer den der Winkel mit diesem bestimmt werden
      *          soll
      * @return Winkel in Grad (0-180)
      */
     public double winkel(Vector v) {
 
-        // 360° - cos^-1 ((u*v) / (|u|*|v|))
-        return (360.0 - Math.cosh(multipliziere(v) / ( betrag() * betrag(v))));
+        // arccos((u*v) / (|u|*|v|))
+        return Math.toDegrees(Math.acos(multipliziere(v) / ( betrag() * betrag(v))));
     }
 
     /**
