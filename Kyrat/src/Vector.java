@@ -15,7 +15,7 @@ public class Vector extends java.lang.Object {
      * Wert 0 haben.
      */
     public Vector() {
-        super();
+        
         this.x = 0.0;
         this.y = 0.0;
         this.z = 0.0;
@@ -29,6 +29,8 @@ public class Vector extends java.lang.Object {
      * @param z die z-Komponente des Vektors
      */
     public Vector(double x, double y, double z) {
+
+        super();
         this.x = x;
         this.y = y;
         this.z = z;
@@ -86,7 +88,6 @@ public class Vector extends java.lang.Object {
         vector2.z = this.z * vector.z;
 
         return (vector2.x + vector2.y + vector2.z);
-
     }
 
     /**
@@ -110,7 +111,6 @@ public class Vector extends java.lang.Object {
         result.z = this.z / amount;
 
         return result;
-
     }
 
     /**
@@ -130,7 +130,6 @@ public class Vector extends java.lang.Object {
         result.z = this.z + vektor.z;
 
         return result;
-
     }
 
     /**
@@ -142,7 +141,6 @@ public class Vector extends java.lang.Object {
 
         //sqrt(aX²+aY²)
         return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
-
     }
 
     /**
@@ -171,6 +169,7 @@ public class Vector extends java.lang.Object {
      * @return die x-Komponente
      */
     public double getX() {
+
         return x;
     }
 
@@ -180,6 +179,7 @@ public class Vector extends java.lang.Object {
      * @return die y-Komponente
      */
     public double getY() {
+
         return y;
     }
 
@@ -189,6 +189,7 @@ public class Vector extends java.lang.Object {
      * @return die z-Komponente
      */
     public double getZ() {
+
         return z;
     }
 
@@ -203,22 +204,31 @@ public class Vector extends java.lang.Object {
 
     }
 
+    /**
+     * @return hash of all vector paths to int
+     */
     @Override
     public int hashCode() {
+
         return (int) (this.x + this.y + this.z);
     }
 
     @Override
     public boolean equals(java.lang.Object o) {
 
+        return true;
     }
 
+    /**
+     * @return comma seperated vector path
+     */
     @Override
     public java.lang.String toString() {
+
         return ("[ " +
                 String.format(Locale.GERMAN, "%1$,.2f",this.x) + " " +
                 String.format(Locale.GERMAN, "%1$,.2f",this.y) + " " +
-                String.format(Locale.GERMAN, "%1$,.2f",this.z) + " ]");
+                String.format(Locale.GERMAN, "%1$,.2f", this.z) + " ]");
     }
 
 }
